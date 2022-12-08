@@ -56,7 +56,8 @@ module.exports = {
 			.setDescription("**Choose your pronouns**! (Within 15 seconds, 3 times only.)")
 			.setColor("Random")
 			.setAuthor({ name: `${interaction.member.user.tag}`, iconURL: `${interaction.user.avatarURL({ size: 4096, extension: "png" })}` })
-			.setTimestamp();
+			.setTimestamp()
+			.setFooter({ text: "Proudly developed and hosted by Acto" });
 
 		const message = await interaction.reply({ embeds: [embed], components: [row1, row2], ephemeral: true });
 		const collector = await message.createMessageComponentCollector({

@@ -11,7 +11,7 @@ module.exports = {
 			option.setName("color")
 				.setDescription("Your chosen color, in HEX format (A1B2C3) without the #. \"help\" for link to pick your color")
 				.setMaxLength(6)
-				.setMinLength(4)
+				.setMinLength(6)
 				.setRequired(true)),
 	async execute(interaction) {
 		const color = await interaction.options.getString("color");
@@ -23,7 +23,8 @@ module.exports = {
 		const embed = new EmbedBuilder()
 			.setColor(`#${color}`)
 			.setAuthor({ name: `${interaction.member.user.tag}`, iconURL: `${interaction.member.user.avatarURL({ extension: "png", size: 4096 })}` })
-			.setTimestamp();
+			.setTimestamp()
+			.setFooter({ text: "Proudly developed and hosted by Acto" });
 
 		const role = await interaction.guild.roles.cache.find(rolea => rolea.name == `${interaction.member.id}`);
 		if (!role) {
@@ -36,7 +37,7 @@ module.exports = {
 				permissions: new PermissionsBitField(),
 			});
 			interaction.member.roles.add(roleb);
-			embed.setDescription("Name Colored! (Create & Color)");
+			embed.setDescription(`Successfully added color ${color} to your name!`);
 			interaction.reply({ embeds: [embed], ephemeral: true });
 			return;
 		}
@@ -52,7 +53,7 @@ module.exports = {
 			permissions: new PermissionsBitField(),
 		});
 
-		embed.setDescription("Name Colored! (Edit Color)");
+		embed.setDescription(`Successfully edited name color to ${color}!`);
 		interaction.reply({ embeds: [embed], ephemeral: true });
 
 	},

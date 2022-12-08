@@ -1,4 +1,4 @@
-const { IntentsBitField, Client, Collection } = require("discord.js");
+const { IntentsBitField, Client, Collection, ActivityType } = require("discord.js");
 const fs = require("node:fs");
 const io = require("@pm2/io");
 const { token } = require("./config.json");
@@ -15,6 +15,7 @@ io.init({
 
 bot.once("ready", async () => {
 	console.log("Bot is ready");
+	bot.user.setPresence({ status: "online", activities: [{ type: ActivityType.Playing, name: "with Acto (Proudly developed and hosted by Acto)" }] });
 });
 
 for (const file of commandFiles) {
@@ -38,7 +39,7 @@ bot.on("interactionCreate", async function(interaction) {
 		await interaction.reply({ content: "There was an error while executing this command!", ephemeral: true });
 	}
 });
-//@ts-ignore
+// @ts-ignore
 bot.on("messageCreate", async function(message) {
 	if (message.author.bot) return;
 	if (!message.inGuild()) return;
