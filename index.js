@@ -48,7 +48,7 @@ bot.on("messageCreate", async function(message) {
 	const args = message.content.substring(1).split(" ");
 	switch (args[0].toLowerCase()) {
 	case "slowmode": {
-		if (!(message.member.id == "428445352354643968" || message.member.id == "710272856772050994")) return message.reply("No perms");
+		if (!(message.member.id == "428445352354643968" || message.member.id == "933317965024210995")) return message.reply("No perms");
 		message.channel.setRateLimitPerUser(parseInt(args[1]));
 		message.channel.send(`Slowmode was set to ${args[1]} seconds.`);
 		break;
