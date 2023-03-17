@@ -9,9 +9,9 @@ module.exports = {
 		.setDMPermission(false)
 		.addStringOption(option =>
 			option.setName("color")
-				.setDescription("Your chosen color, in HEX format (A1B2C3) without the #. \"help\" for link to pick your color")
+				.setDescription("Please enter a HEX color code (without the hashtag). If you don't know what that is, type HELP .")
 				.setMaxLength(6)
-				.setMinLength(6)
+				.setMinLength(4)
 				.setRequired(true)),
 	async execute(interaction) {
 		const color = await interaction.options.getString("color");
