@@ -14,7 +14,7 @@ module.exports = {
 				.setMinLength(4)
 				.setRequired(true)),
 	async execute(interaction) {
-		const color = await interaction.options.getString("color");
+		const color = await interaction.options.getString("color").toLowerCase();
 		if (color == "help") return interaction.reply({ content: "Here's your link to pick a color: https://g.co/kgs/RtvjWy", ephemeral: true });
 		if (!interaction.member.roles.cache.has("1040759146485653545")) {
 			interaction.member.roles.add("1040759146485653545");
@@ -22,7 +22,7 @@ module.exports = {
 
 		const embed = new EmbedBuilder()
 			.setColor(`#${color}`)
-			.setAuthor({ name: `${interaction.member.user.tag}`, iconURL: `${interaction.member.user.avatarURL({ extension: "png", size: 4096 })}` })
+			.setAuthor({ name: `${interaction.member.user.tag}`, iconURL: `${interaction.member.user.avatarURL({ extension: "png", size: 4096 }) ?? ""}` })
 			.setTimestamp()
 			.setFooter({ text: "Proudly developed and hosted by Acto" });
 

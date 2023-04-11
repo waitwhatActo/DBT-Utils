@@ -55,7 +55,7 @@ module.exports = {
 		const embed = new EmbedBuilder()
 			.setDescription("**Choose your pronouns**! (15 seconds, 3 choices per interaction)")
 			.setColor("Random")
-			.setAuthor({ name: `${interaction.member.user.tag}`, iconURL: `${interaction.user.avatarURL({ size: 4096, extension: "png" })}` })
+			.setAuthor({ name: `${interaction.member.user.tag}`, iconURL: `${interaction.user.avatarURL({ size: 4096, extension: "png" }) ?? ""}` })
 			.setTimestamp()
 			.setFooter({ text: "Proudly developed and hosted by Acto" });
 

@@ -35,7 +35,7 @@ module.exports = {
 		interaction.reply({ content: `Thread created: <#${thread.id}>`, ephemeral: true });
 
 		const embed = new EmbedBuilder()
-			.setAuthor({ iconURL: interaction.user.avatarURL({ size: 4096, extension: "png" }), name: interaction.member.user.username })
+			.setAuthor({ iconURL: interaction.user.avatarURL({ size: 4096, extension: "png" }) ?? "", name: interaction.member.user.username })
 			.setDescription(`**This thread was created by <@${interaction.member.id}>. \n\n<@${interaction.member.id}> would like to discuss about ${threadname}`)
 			.setTimestamp()
 			.setFooter({ text: "Ping your friends to invite them into the conversation; Proudly developed and hosted by Acto" });
