@@ -30,6 +30,6 @@ module.exports = {
 			])
 			.setTimestamp()
 			.setFooter({ text: `ID: ${member.user.id}` });
-		member.guild.channels.fetch(ids.channels.mod.log).send({ embeds: [embed] });
+		await (member.guild.channels.fetch(ids.channels.mod.log)).send({ embeds: [embed] });
 	},
 };
