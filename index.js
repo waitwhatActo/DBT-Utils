@@ -2,8 +2,9 @@ const { IntentsBitField, Client, Collection, Events } = require("discord.js");
 const fs = require("node:fs");
 const io = require("@pm2/io");
 const { token } = require("./config.json");
+const { ids } = require("./ids.json");
 const bot = new Client({ intents: new IntentsBitField(3276799) });
-module.exports = { bot };
+module.exports = { bot, ids };
 
 io.init({
 	// @ts-ignore
