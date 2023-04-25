@@ -1,5 +1,5 @@
 const { Events, EmbedBuilder } = require("discord.js");
-const { ids } = require("../index.js");
+const { ids, bot } = require("../index.js");
 
 module.exports = {
 	name: Events.GuildMemberAdd,
@@ -24,13 +24,13 @@ module.exports = {
 		const embed = new EmbedBuilder()
 			.setAuthor({ name: member.user.tag, iconURL: member.user.displayAvatarURL() })
 			.setTitle("**Member Joined**")
-			.setColor(membera.user.hexAccentColor ?? "GREEN")
+			.setColor(membera.user.hexAccentColor ?? "#00FF00")
 			.setThumbnail(member.user.displayAvatarURL() ?? "https://cdn.discordapp.com/embed/avatars/0.png?size=4096")
 			.addFields([
-				{ name: "Account Created", value: `<t:${member.user.createdTimestamp/1000}:F>`, inline: true },
+				{ name: "Account Created", value: `<t:${Math.round(member.user.createdTimestamp / 1000)}:F>`, inline: true },
 			])
 			.setTimestamp()
-			.setFooter({ text: `ID: ${member.user.id}` });
+			.setFooter({ text: `ID: ${member.user.id}`, iconURL: bot.user.displayAvatarURL() });
 		await (member.guild.channels.cache.get(ids.channels.mod.log)).send({ embeds: [embed] });
 	},
 };
