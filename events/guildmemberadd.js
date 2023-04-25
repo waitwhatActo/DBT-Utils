@@ -6,7 +6,7 @@ module.exports = {
 	async execute(member) {
 		const tierrole = await member.guild.roles.fetch("1060378062740541562");
 		const memberrole = await member.guild.roles.fetch("1023534020249788477");
-		member = await member.fetch();
+		const membera = await member.fetch();
 
 		try {
 			member.roles.add(tierrole);
@@ -24,7 +24,7 @@ module.exports = {
 		const embed = new EmbedBuilder()
 			.setAuthor({ name: member.user.tag, iconURL: member.user.displayAvatarURL() })
 			.setTitle("**Member Joined**")
-			.setColor(member.user.hexAccentColor ?? "GREEN")
+			.setColor(membera.user.hexAccentColor ?? "GREEN")
 			.setThumbnail(member.user.displayAvatarURL() ?? "https://cdn.discordapp.com/embed/avatars/0.png?size=4096")
 			.addFields([
 				{ name: "Account Created", value: `<t:${member.user.createdTimestamp/1000}:F>`, inline: true },
