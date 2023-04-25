@@ -23,10 +23,11 @@ module.exports = {
 
 		const embed = new EmbedBuilder()
 			.setAuthor({ name: member.user.tag, iconURL: member.user.displayAvatarURL() })
-			.setDescription("**Member Joined**")
+			.setTitle("**Member Joined**")
+			.setColor(member.user.hexAccentColor ?? "GREEN")
 			.setThumbnail(member.user.displayAvatarURL() ?? "https://cdn.discordapp.com/embed/avatars/0.png?size=4096")
 			.addFields([
-				{ name: "Account Created", value: `<t:${member.user.createdTimestamp}:F>`, inline: true },
+				{ name: "Account Created", value: `<t:${member.user.createdTimestamp/1000}:F>`, inline: true },
 			])
 			.setTimestamp()
 			.setFooter({ text: `ID: ${member.user.id}` });
