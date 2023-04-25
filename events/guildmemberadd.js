@@ -23,9 +23,9 @@ module.exports = {
 
 		const embed = new EmbedBuilder()
 			.setAuthor({ name: member.user.tag, iconURL: member.user.displayAvatarURL() })
-			.setColor(member.user.hexAccentColor)
+			.setColor(member.user.hexAccentColor ?? 0x00FF00)
 			.setDescription("**Member Joined**")
-			.setThumbnail(member.user.displayAvatarURL())
+			.setThumbnail(member.user.displayAvatarURL() ?? "https://cdn.discordapp.com/embed/avatars/0.png?size=4096")
 			.addFields([
 				{ name: "Account Created", value: `<t:${member.user.createdTimestamp}:F>`, inline: true },
 			])
