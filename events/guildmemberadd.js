@@ -23,7 +23,7 @@ module.exports = {
 
 		const embed = new EmbedBuilder()
 			.setAuthor({ name: member.user.tag, iconURL: member.user.displayAvatarURL() })
-			.setColor(member.user.hexAccentColor ?? 0x00FF00)
+			.setColor(member.user.hexAccentColor ?? "00FF00")
 			.setDescription("**Member Joined**")
 			.setThumbnail(member.user.displayAvatarURL() ?? "https://cdn.discordapp.com/embed/avatars/0.png?size=4096")
 			.addFields([
