@@ -10,7 +10,7 @@ module.exports = {
 		switch (action) {
 		case AuditLogEvent.MemberBanAdd: {
 			const embed = new EmbedBuilder()
-				.setAuthor({ name: target.tag, iconURL: target.displayAvatarURL() })
+				.setAuthor({ name: target.tag, iconURL: target.displayAvatarURL(), url: `https://discord.com/users/${targetId}` })
 				.setColor("#FF0000")
 				.setTitle("**Member Banned**")
 				.addFields([
@@ -29,7 +29,7 @@ module.exports = {
 		}
 		case AuditLogEvent.MemberBanRemove: {
 			const embed = new EmbedBuilder()
-				.setAuthor({ name: target.tag, iconURL: target.displayAvatarURL() })
+				.setAuthor({ name: target.tag, iconURL: target.displayAvatarURL(), url: `https://discord.com/users/${targetId}` })
 				.setColor("#00FF00")
 				.setTitle("**Member Unbanned**")
 				.addFields([
@@ -46,7 +46,7 @@ module.exports = {
 		}
 		case AuditLogEvent.MemberKick: {
 			const embed = new EmbedBuilder()
-				.setAuthor({ name: target.tag, iconURL: target.displayAvatarURL() })
+				.setAuthor({ name: target.tag, iconURL: target.displayAvatarURL(), url: `https://discord.com/users/${targetId}` })
 				.setColor("#FF0000")
 				.setTitle("**Member Kicked**")
 				.addFields([

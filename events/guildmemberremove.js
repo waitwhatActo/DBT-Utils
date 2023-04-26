@@ -5,7 +5,7 @@ module.exports = {
 	name: Events.GuildMemberRemove,
 	async execute(member) {
 		const embed = new EmbedBuilder()
-			.setAuthor({ name: member.user.tag, iconURL: member.user.displayAvatarURL() })
+			.setAuthor({ name: member.user.tag, iconURL: member.user.displayAvatarURL(), url: `https://discord.com/users/${member.user.id}` })
 			.setColor("#FF0000")
 			.setTitle("**Member Left**")
 			.addFields([
