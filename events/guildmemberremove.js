@@ -14,7 +14,7 @@ module.exports = {
 			])
 			.setTimestamp()
 			.setThumbnail(member.user.displayAvatarURL() ?? "https://cdn.discordapp.com/embed/avatars/0.png?size=4096")
-			.setFooter({ text: `ID: ${member.user.id}`, iconURL: bot.user.displayAvatarURL() });
+			.setFooter({ text: `User ID: ${member.user.id}`, iconURL: bot.user.displayAvatarURL() });
 		await (member.guild.channels.cache.get(ids.channels.mod.log)).send({ embeds: [embed] });
 	},
 };

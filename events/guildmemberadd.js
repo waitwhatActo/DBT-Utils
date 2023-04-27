@@ -30,7 +30,7 @@ module.exports = {
 				{ name: "Account Created", value: `<t:${Math.round(member.user.createdTimestamp / 1000)}:F>`, inline: true },
 			])
 			.setTimestamp()
-			.setFooter({ text: `ID: ${member.user.id}`, iconURL: bot.user.displayAvatarURL() });
+			.setFooter({ text: `User ID: ${member.user.id}`, iconURL: bot.user.displayAvatarURL() });
 		await (member.guild.channels.cache.get(ids.channels.mod.log)).send({ embeds: [embed] });
 	},
 };

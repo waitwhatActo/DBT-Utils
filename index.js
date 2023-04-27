@@ -39,12 +39,19 @@ bot.on(Events.MessageCreate, async function(message) {
 	if (!message.content.startsWith("!")) return;
 	const args = message.content.substring(1).split(" ");
 	switch (args[0].toLowerCase()) {
-	case "slowmode": {
-		if (!(message.member.id == "428445352354643968" || message.member.id == "933317965024210995")) return message.reply("No perms");
-		message.channel.setRateLimitPerUser(parseInt(args[1]));
-		message.channel.send(`Slowmode was set to ${args[1]} seconds.`);
-		break;
+	case "kill":{
+		if (message.author.id === ids.members.acto) {
+			process.exit();
+		}
+		else {
+			message.channel.send("You do not have permission to use this command.").then(msg => {
+				setTimeout(() => {
+					msg.delete();
+				}, 5000);
+			});
+		}
 	}
+
 	}
 });
 

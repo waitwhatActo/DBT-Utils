@@ -27,5 +27,6 @@ module.exports = {
 		}
 
 		interaction.reply({ content: `Successfully kicked ${member}.`, ephmeral: private });
+		interaction.channel.send(`${member} was kicked.`);
 	},
 };

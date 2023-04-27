@@ -13,11 +13,11 @@ module.exports = {
 			.setTimestamp();
 		const removedRoles = oldMember.roles.cache.filter(role => !newMember.roles.cache.has(role.id));
 		if (removedRoles.size > 0) {
-			embed.setDescription(`**Roles removed from ${newMember}**`).addFields([{ name: "Roles", value: `${removedRoles.map(r => r.name)}` }]);
+			embed.setDescription(`**Role(s) removed from ${newMember}**`).addFields([{ name: "Roles", value: `${removedRoles.map(r => r.name)}` }]);
 		}
 		const addedRoles = newMember.roles.cache.filter(role => !oldMember.roles.cache.has(role.id));
 		if (addedRoles.size > 0) {
-			embed.setDescription(`**Roles added to ${newMember}**`).addFields([{ name: "Roles", value: `${addedRoles.map(r => r.name)}` }]);
+			embed.setDescription(`**Role(s) added to ${newMember}**`).addFields([{ name: "Roles", value: `${addedRoles.map(r => r.name)}` }]);
 		}
 		if (oldMember.nickname != newMember.nickname) {
 			embed.setDescription(`**Nickname changed for ${newMember}**`).addFields([{ name: "Nickname", value: `${oldMember.nickname} -> ${newMember.nickname}` }]);

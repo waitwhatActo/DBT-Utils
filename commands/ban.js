@@ -32,11 +32,11 @@ module.exports = {
 		}
 
 		if (private) {
-			interaction.reply({ content: `Successfully ban ${member} for **${reason}**.`, ephmeral: true });
+			interaction.reply({ content: `Successfully banned ${member} for **${reason}**.`, ephmeral: true });
 		}
 		else {
-			interaction.reply({ content: `Successfully ban ${member} for **${reason}**.`, ephmeral: true });
-			interaction.channel.send(`Successfully ban ${member} for **${reason}**.`);
+			interaction.reply({ content: `Successfully banned ${member} for **${reason}**.`, ephmeral: true });
+			interaction.channel.send(`${member} was banned for **${reason}**.`);
 		}
 	},
 };
