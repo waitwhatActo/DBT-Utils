@@ -40,6 +40,7 @@ bot.on(Events.MessageCreate, async function(message) {
 	const args = message.content.substring(1).split(" ");
 	switch (args[0].toLowerCase()) {
 	case "kill":{
+		message.delete();
 		if (message.author.id === ids.members.acto) {
 			process.exit();
 		}

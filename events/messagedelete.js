@@ -13,7 +13,7 @@ module.exports = {
 				{ name: "Message", value: `\`\`\`${message.content ?? "Message did not contain text."}\`\`\`` },
 				{ name: "Message ID", value: `${message.id}` },
 				{ name: "Sent At", value: `<t:${Math.round(message.createdTimestamp / 1000)}:F>` },
-				{ name: "Deleted At", value: `<t:${new Date().getTime()}:F>` },
+				{ name: "Deleted At", value: `<t:${Math.round(new Date().getTime() / 1000)}:F>` },
 			])
 			.setFooter({ text: `User ID: ${message.author.id}`, iconURL: bot.user.displayAvatarURL() })
 			.setTimestamp();
