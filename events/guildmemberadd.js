@@ -11,11 +11,11 @@ module.exports = {
 			"pedohunter.com"
 			];
 			
-		for (let i = 0; i < bannedmember.length; i++) {
-			if (member.username.includes(bannedmember[i]) {
-				member.ban({ reason: "Matched member filter" });
-			}
-		}
+		// for (let i = 0; i < bannedmember.length; i++) {
+			// if (member.username.includes(bannedmember[i]) {
+				// member.ban({ reason: "Matched member filter" });
+			// }
+		// }
 		
 		const tierrole = await member.guild.roles.fetch("1060378062740541562");
 		const memberrole = await member.guild.roles.fetch("1023534020249788477");
