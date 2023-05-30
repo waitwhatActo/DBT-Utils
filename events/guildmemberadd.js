@@ -12,7 +12,10 @@ module.exports = {
 			];
 			
 		for (let i = 0; i < bannedmember.length; i++) {
-			member.ban({ reason: "Matched member filter" });
+			if (member.username.includes(bannedmember[i]) {
+				member.ban({ reason: "Matched member filter" });
+			}
+			else return;
 		}
 		
 		const tierrole = await member.guild.roles.fetch("1060378062740541562");
