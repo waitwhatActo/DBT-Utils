@@ -5,6 +5,7 @@ module.exports = {
 	name: Events.MessageUpdate,
 	async execute(oldMessage, newMessage) {
 		if (newMessage.content == oldMessage.content) return;
+		if (newMessage.channel.id == "1116868202224435291") return;
 		const embed = new EmbedBuilder()
 			.setAuthor({ name: newMessage.author.tag, iconURL: newMessage.author.displayAvatarURL(), url: `https://discord.com/users/${newMessage.author.id}` })
 			.setColor("Random")

@@ -4,6 +4,7 @@ const { bot, ids } = require("../index.js");
 module.exports = {
 	name: Events.MessageDelete,
 	async execute(message) {
+		if (message.channel.id == "1116868202224435291") return;
 		const embed = new EmbedBuilder()
 			.setAuthor({ name: message.author.tag, iconURL: message.author.displayAvatarURL(), url: `https://discord.com/users/${message.author.id}` })
 			.setColor(0xFF0000)
