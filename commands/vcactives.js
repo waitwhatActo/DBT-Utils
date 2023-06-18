@@ -10,12 +10,12 @@ module.exports = {
 		.addSubcommand(subcommand =>
 			subcommand
 				.setName("add")
-				.setDescription("Add the role vc active to yourself"),
+				.setDescription("Add the role @VC Actives to yourself"),
 		)
 		.addSubcommand(subcommand =>
 			subcommand
 				.setName("remove")
-				.setDescription("Remove the role vc active from yourself"),
+				.setDescription("Remove the role @VC Actives from yourself"),
 		),
 	async execute(interaction) {
 		const subcommand = interaction.options.getSubcommand();
