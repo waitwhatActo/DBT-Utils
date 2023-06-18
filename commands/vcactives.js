@@ -4,7 +4,7 @@ module.exports = {
 	name: "vcactives",
 	type: "slash",
 	data: new SlashCommandBuilder()
-		.setName("vc")
+		.setName("vcactives")
 		.setDescription("Get the role @VC Active")
 		.setDMPermission(false)
 		.addSubcommand(subcommand =>
