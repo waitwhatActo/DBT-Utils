@@ -30,7 +30,7 @@ module.exports = {
 		catch {
 			interaction.reply({ content: "Failed to ban member, please retry.", ephemeral: true });
 		}
-			interaction.reply({ content: `Successfully banned ${member} for **${reason}**.`, ephemeral: true });
+		interaction.reply({ content: `Successfully banned ${member} for **${reason}**.`, ephemeral: true });
 		if (!private) {
 			interaction.channel.send(`${member} was banned for **${reason}**.`);
 		}
