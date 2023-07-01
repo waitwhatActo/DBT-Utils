@@ -23,7 +23,7 @@ module.exports = {
 			embed.setDescription(`**Nickname changed for ${newMember}**`).addFields([{ name: "Nickname", value: `${oldMember.nickname} -> ${newMember.nickname}` }]);
 		}
 		else if (oldMember.communicationDisabledUntilTimestamp != newMember.communicationDisabledUntilTimestamp) {
-			if (newMember.communicationDisabledUntilTimestamp == null) {
+			if (newMember.communicationDisabledUntilTimestamp === null) {
 				embed.setDescription(`**${newMember} unmuted**`).setColor(0x00FF00);
 			}
 			else {
@@ -31,7 +31,7 @@ module.exports = {
 			}
 		}
 		else if (oldMember.premiumSinceTimestamp != newMember.premiumSinceTimestamp) {
-			if (newMember.premiumSinceTimestamp == null) {
+			if (newMember.premiumSinceTimestamp === null) {
 				embed.setDescription(`**${newMember} stopped boosting the server with Nitro.**`).setColor(0xFF0000);
 			}
 			else {
