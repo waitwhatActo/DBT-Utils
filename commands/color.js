@@ -1,5 +1,11 @@
 const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ActionRowBuilder, ButtonStyle } = require("discord.js");
 
+function isHexColor(hex) {
+	return typeof hex === "string"
+		&& hex.length === 6
+		&& !isNaN(Number("0x" + hex));
+}
+
 module.exports = {
 	name: "color",
 	type: "slash",
@@ -20,6 +26,7 @@ module.exports = {
 				interaction.member.roles.add("1040759146485653545");
 			}
 			const color = await interaction.options.getString("test-a-members-only");
+			if (isHexColor(color) == false) return interaction.reply({ content: "That is not a valid hex color! Please use the option test-a-members-only to specify a valid color. \rIf you are you having diffculties figuring out what is a hex color code, use [this](https://g.co/kgs/pwHV9S)", ephemeral: true });
 			if (!color) return interaction.reply({ content: "You did not specify a color! Please use the option test-a-members-only to specify your color.", ephemeral: true });
 			const embed = new EmbedBuilder()
 				.setDescription(`Your name color has been set to ${color}!`)
