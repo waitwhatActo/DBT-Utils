@@ -34,7 +34,7 @@ module.exports = {
 				.setAuthor({ name: interaction.user.tag, iconURL: interaction.user.displayAvatarURL() })
 				.setFooter({ text: "DBT Utils da best", iconURL: bot.user.displayAvatarURL() });
 			let givenrole;
-			if (interaction.guild.roles.cache.has(role => role.name == interaction.member.id)) {
+			if (await interaction.guild.roles.cache.find(role => role.name == interaction.member.id)) {
 				await interaction.guild.roles.cache.find(role => role.name == interaction.member.id).setColor(color);
 			}
 			else {
