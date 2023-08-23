@@ -59,7 +59,7 @@ module.exports = {
 				.setDescription("**Choose a color from the list below!**")
 				.setColor("Random")
 				.setAuthor({ name: interaction.user.tag, iconURL: interaction.user.displayAvatarURL() })
-				.setFooter({ text: "DBT Utils da best", iconURL: bot.user.displayAvatarURL() });
+				.setFooter({ text: "Please choose within 15 seconds.", iconURL: bot.user.displayAvatarURL() });
 			const row1 = new ActionRowBuilder()
 				.addComponents(new ButtonBuilder().setCustomId("red").setLabel("Red").setStyle(ButtonStyle.Danger), new ButtonBuilder().setCustomId("orange").setLabel("Orange").setStyle(ButtonStyle.Secondary), new ButtonBuilder().setCustomId("yellow").setLabel("Yellow").setStyle(ButtonStyle.Secondary), new ButtonBuilder().setCustomId("green").setLabel("Green").setStyle(ButtonStyle.Success), new ButtonBuilder().setCustomId("blue").setLabel("Blue").setStyle(ButtonStyle.Primary));
 			const row2 = new ActionRowBuilder()
